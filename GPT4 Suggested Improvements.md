@@ -16,3 +16,6 @@ Note: kinda agree, but wanted to do provisioning instead of configuration manage
 The Terraform code does not specify any tags for the EC2 instance other than "Name". Adding more tags could be useful for organization and cost tracking.
 
 Note: yep, if you're reading this and plan to use this I guarantee your CI/CD pipeline folks are gonna want better tags; probably NetSec too.
+
+#
+## Will continue refining
