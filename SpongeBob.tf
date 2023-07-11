@@ -85,6 +85,6 @@ resource "aws_instance" "example" {
   EOF
 
   tags = {
-    Name = "example-instance"
+    Name = "example-instance-tag"
   }
 }
