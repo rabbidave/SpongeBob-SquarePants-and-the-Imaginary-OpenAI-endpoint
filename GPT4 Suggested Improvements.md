@@ -3,7 +3,7 @@ with in-line responses
 #
 The user data assumes that the EC2 instance has internet access to install the necessary packages. If the instance is in a private subnet, additional steps may be needed to provide internet access.
 
-Note: fair point; or build those packages into a custom AMI
+Note: fair point, or you could build those packages into a custom AMI
 
 The user data is quite long and complex. It might be better to move this into a separate script file and use the "file" function in Terraform to load it.
 
