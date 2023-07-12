@@ -54,11 +54,14 @@ resource "aws_instance" "example" {
 
   user_data = <<-EOF
     #!/bin/bash
-    sudo apt update
-    sudo apt install -y nginx software-properties-common
-    sudo add-apt-repository ppa:certbot/certbot
-    sudo apt install -y python-certbot-nginx
-    sudo certbot --nginx -d ${var.domain} -d www.${var.domain}
+    set -e
+    if [ ! -f /etc/letsencrypt/live/${var.domain}/fullchain.pem ]; then
+      sudo apt update
+      sudo apt install -y nginx software-properties-common
+      sudo add-apt-repository ppa:certbot/certbot
+      sudo apt install -y python-certbot-nginx
+      sudo certbot --nginx -d ${var.domain} -d www.${var.domain}
+    fi
     echo "server {
       listen 80;
       listen 443 ssl;
